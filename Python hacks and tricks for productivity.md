@@ -1,0 +1,172 @@
+- Context:: #Coursera
+- Course information::
+    - Images
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdanlessa%2FDcBq9GfP32.jpg?alt=media&token=beeda924-0fd7-44c3-8375-3df161fb7ded)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdanlessa%2FnQFoHqVZ8A.jpg?alt=media&token=0465c6d3-678f-4136-837c-34b8f2286993)
+    - Instructor name
+        - Danilo Lessa Bernardineli
+    - __Project description__
+        - By the end of this project, you are going to be an more complete Python user, and will have an better grasp of several techniques and tips which increases coding speed and conciseness. This will be useful for anyone who uses Python regularly, including data scientists, software engineers, technicians and hobbyists.
+    - __Target learner__
+        - This guided project is for beginner and/or intermediate Python users which wants to take their skill to the next level. The audience include software engineers, data scientists, practitioners, hobbyists and anyone who makes use of Python in an regular basis.
+    - __Project prerequisites__
+        - Basic Python
+    - __Number of Tasks in Project __
+        - 7
+    - __Expected project length__
+    - __Software needed for Rhyme VM instance__
+        - Ubuntu
+        - Jupyter
+- Project Learning Objects::
+    - Utilize list and dict comprehensions
+    - Learn about defaultdict and namedtuple
+    - Learn how to use a pythonic set and its operations
+    - Adopt type hinting
+    - Wrangle and transpose python structures through zip and starred expressions
+    - Run heavy tasks with multiprocessing and progress bars
+    - Make effortless custom texts with f-strings and .format()
+- Tasks::
+    - Task 1
+        - Learning Object:: "Utilize list and dict comprehensions"
+        - Description:: "List and dictionary comprehensions allows you to map, reduce and filter elements using clean one-liners. Instead of you having to invoke a for-loop for each complex operation on a list, you use a comprehension for having the data on your fingerprints"
+        - Script::
+            - Welcome to the Python Hacks and Tricks for Productivity course! My name is Danilo, and I’ll be your guided instructor through the Rhyme Interactive Platform. I’ll guide you here through the right panel, while you have your own ready preconfigured virtual machine on the left panel.
+            - Through this course, you will learn several Python features which can substantially improve your coding flow as well as the clarity of your code. Python is a easy language to learn, but the side-effect of it is that most of the users don't get to know some of the most unique features of it.
+            - One of those features is list and dictionary comprehensions, and they will be the subject of this task. By using them, you are going improve your fluidity and agility when wrangling data structures across Python. 
+            - List and dictionary comprehensions allows you to map, reduce and filter elements using clean one-liners. Instead of you having to invoke a for-loop for each complex operation on a list, you use a comprehension for having the data on your fingerprints
+            - So, for start, your browser should be opened at a Jupyter Notebook. Open the task one notebook. As you can see it, I've already put some blocks in here containing for-loops, so let me explain.
+            - We have three blocks. The first one we create an list of numbers, and we calculate the square of each one of them. Simple. The second one filters the list of numbers of having only the odd values.
+            - The last one does both things. It does calculate the square of only the odd numbers. 
+            - Those three blocks are how most Python users are used to work with lists and iterators. It is sort of a lot of code for having not a lot of things happening. We need to create a new list, iterate on it, apply something and append. Not very efficient in regards to the coder time.
+            - However, there is an trick that can change your life: list comprehensions. I'll show how you do the first block. Just create a new block and type with me: X equals 1 2 3 4 5. New X equals x squared for x in X. print new X. Run it. This is the comprehension analogue of the first block. Neat isn't? Feel free to pause the video and to change the list, or to change the operation inside the comprehension.
+            - Comprehensions can also apply filters. Open a new block, copy what we have done, and type with me after the upper X: if x mod 2 equals zero. Run it. Now compare that with the original for loop block. A lot less code isn't? Again, feel free to pause the video to experiment with the list comprehension.
+            - You already have a grasp of the list comprehensions. It is really that simple. However what many people doesn't notice is that this syntax can be used also for other python objects, like dictionaries.
+            - To see what I mean, copy the last block, but you'll need to apply some changes: you put some curly braces, and also you need to put a key, in this case I'll put x.
+            - Run it. If you aren't convinced that new X in fact generated an dict, let's type with me: print X new keys
+            - Also, print new X values. That's it, we have an dictionary mapping numbers to their squared value, and filtered by a odd condition in just one line!
+            - As you can see, comprehensions are truly powerful, and can be way more readable. The concise syntax also allows you to write code more efficiently.
+            - So that's it for this task. You now have a grasp of one of Python's most useful features. On the next task, we are going to learn about some of Python's most underutilized collections: the defaultdict and the namedtuple. See you!
+        - Quiz:: What kind of operations can a list comprehension do?
+            - Map elements of a list to a function - like taking the squares
+                - Elements can be mapped by applying a function before the **for** keyword
+            - Filter elements of a list
+                - Elements can be filtered through the usage of a if conditional inside the comprehension
+            - Transform lists into dictionaries
+                - The output from a list comprehension is always a new list
+            - Create lists from iterators, like dictionaries keys
+    - Task 2
+        - Learning Object:: "Learn about defaultdict and namedtuple"
+        - Description:: On this task, we are going to learn about two very useful collections on Python: the defaultdict and the namedtuple. Both of them increase the clarity of your code, and helps you to be more productive while coding. 
+        - Script::
+            - Welcome back! On this task, we are going to learn about two very useful collections on Python: the defaultdict and the namedtuple. Both of them increase the clarity of your code, and helps you to be more productive while coding. 
+            - Defaultdict allows you to set values into a dictionary even if you don't have the key, and namedtuple allows you to have variables with the same structure. Both objects are more easier to show rather to explain, so let's get on the notebook.
+            - To start, I'll show a kind of coding problem that appears every time and at every textbook. Suppose that we have banking accounts associated with a key, which on this case are names of people: Jonathan and Markus, and also that their accounts have balance.
+            - Also, suppose that we had some deposits, and we need to update their accounts. This is straightforward: just do a for-loop.
+            - Now suppose that we have another person doing a deposit, like Jamsheed, who handed us a one hundred bill note. If we run the for loop again, this will gives us an error.
+            - The straightforward way for fixing that, would be to add an conditional on the for loop. For doing that, follow me: copy the cell, paste it, and type if account not in account balances, account balances account equals zero. Run it, see that it worked?
+            - This is a bit convoluted, and Python has a alternative for doing that in a cleaner way through defaultdict. 
+            - So let's copy the first block again, but now we put a from collections import defaultdict to import it, and we define account balances as being a defaultdict, lambda fifteen. This lambda argument informs us what is the default value inside the account, and on this case I've put a value equal to fifteen.
+            - Now let's run it again! Did you see that it worked? What happens now if you change the value on lambda to another number? or to a string? Feel free to pause the video and try it.
+            - Now I'll introduce you another Python object: the namedtuple. It is a quick way of you having a named and explicit structures for the things that you handle around
+            - For using it, let's import it: from typing import namedtuple.
+            - I'll show you how we could wrap our deposits in a namedtuple. Just type with me: class deposit named tuple receiver string value string.
+            - We've just created a object which has a receiver attribute, which is a text, and a value attribute, which is a number.
+            - For creating deposits, we would only pass Deposit receiver Markus value 5 for instance. If you run it, you'll have your deposit. 
+            - You can also try to create an deposit with a non-existing attribute, but it will fail, just as like when I pass a sender argument instead of a receiver. Feel free to pause the video and challenge yourself by changing the attributes and seeing what happens.
+            - Now let's wrap the defaultdict and the namedtuple together.  Copy the cell with the defaultdict and paste into a new one. Copy also the cell with the namedtuple, and let's adapt the deposits variable to use the Deposit object instead of the dict. Just follow me:
+            - Now run it! Compare it with the version of it without the objects that we've taught. Which one seems to be more more clear and re-usable? 
+            - So that's it for this task. You know the use-cases of the defaultdict and the namedtuple objects, and on next task we are going to learn about Pythonic sets. 
+        - Quiz::
+            - 
+    - Task 3
+        - Learning Object:: "Learn how to use a pythonic set and its operations"
+        - Description:: On this task, we are going to learn about using sets on Python, which is an useful feature for having conciseness and speed when handling several types of data. Also, using set allows you to be more transparent about the data structure and about your intent on the code.
+        - Script::
+            - Welcome back! On this task, we are going to learn about using sets on Python, which is an useful feature for having conciseness and speed when handling several types of data. Also, using set allows you to be more transparent about the data structure and about your intent on the code.
+            - So let's start by opening the task three notebook. I've put an cell that simulates the following problem: We have a list of available countries and a list of forbidden countries. We have just received a list of countries which are candidates for being available too, but we need to check if they are not in the forbidden list.
+            - The traditional way would involve you making an copy of the available countries list, and doing a for loop together with some conditionals and a list append for doing that, but frankly this is a bit convoluted for such a simple operation
+            - There is a much better and clear approach through. It's by using Python sets. Python sets are somewhat similar to lists in the sense that they can contain almost anything, including texts and functions, but they have some unique properties which I'll show you.
+            - So first I'll show how a set looks like. Open a new cell, and type with me: new set 10 some text lambda x x squared new set. Run it. You now have your first set.
+            - One key thing about sets, is they only distinct values. To show that, let's copy this block and open a new one, and repeat ten three times. Run it again. See it? Feel free to pause the video and experiment with our set.
+            - Now I'll show in a brief how we would do the country problem with sets. Copy that block, and change the lists into sets. Delete everything after the new countries. Define updated countries as being the available countries, concatenated by parenthesis new countries less forbidden countries, and that's it!
+            - Way cleaner isn't? Feel free to pause the video and to experiment with the countries which are inside our sets, like the new countries or the forbidden countries.
+            - I'll guide you now of what the set operation just did. Open a new block, and let's first see the new countries. Trivial.
+            - Now open another, and let's subtract the new countries by the forbidden countries. You can note that every forbidden country contained in the new countries has disappeared
+            - Let's open yet another block, and put available countries concat new countries. This is the analogue of summing sets. You can observe that now we have all the elements of the available countries together with the new countries, including the forbidden ones.
+            - Now for the last cell. We just repeat the updated countries operations, and we can see that now we exclude the forbidden countries.
+            - There is also a last set operation that it is interesting, which is the intersection of sets. Open a new block, and type with me: available countries and new countries. You can see that India is the only country on both the available and the new countries sets.
+            - So that's it for this task! You now have a grasp of what Pythonic sets can do, and why they can be useful for making your code clearer and more explicit. On the next task, we'll learn about type hinting.
+    - Task 4
+        - Learning Object:: "Adopt type hinting"
+        - Description:: On this task, we are going to learn about type hinting, a Python feature for putting annotations on your variables and functions to give you a hint of what to expect from your functions.
+        - Script::
+            - Welcome back! On this task, we are going to learn about type hinting, a Python feature for putting annotations on your variables and functions to give you a hint of what to expect from your functions.
+            - This feature is very useful when you are in large projects, and you need consistency about what you receive or what you send. It is one of the most low-hanging fruit when it comes to have useful documentation without too much work.
+            - So first, let's introduce a use-case. Open the task four notebook, and I have defined a function for you there. Can you tell me what it does in a glance? Or what it does even expect in a first glance? Well, I cannot.
+            - Let's see what happens when we pass a set into it. Something did happen, as we have this one two five set. What happens too if we pass some numbers? Open a new block with me and type: function one two three. It returned minus one, so there's something happening.
+            - What if we pass some decimal numbers? Open another block, and type with me: function one dot five, two dot five, three dot five. Now we have a error.
+            - What is the intent of this function that is defined on the notebook? What does it expects? I really don't know. You can always add some comments, but they can be long and not being friendly for skimming it quickly. Fortunately, Python has this type hinting which comes to our rescue.
+            - So let's copy that function, and add some type hinting. It is simple. Just put on the params: set, set, set. This informs us what is the expected input type for the function. We can also inform the output of the function: it gives us set.
+            - We could do the same thing, but for expecting a int also: so it would be here int int int, and gives us a int.
+            - Type hinting doesn't change the behaviour of the code, it is really just a clarity feature, which actually is the central tenet of the entire philosophy of doing pythonic code.
+            - Now let's refactor the block which we gave some sets as inputs to the function. We'll copy the function here, and copy the function call over there. Python also allows you to type hint your variables, so I'm going to do that.
+            - You can use almost any type for the hints. For example, open a new cell and type with me: a object equals none, b dict equals a five, c list equals one. Sounds silly, but when you call complex functions, having those pieces of information can be crucial for doing debug and generating expectancies.
+            - Also, type hinting can be used as a software engineering tool in the sense that you can specify variables and functions without having to actually implement them. For instance, let's open a new block an create a function, where a is a flot, b is a dict with default value, c is a list with default value, and returns us a bool. The function just passes along, but we already know what to expect from the input and output.
+            - So that's it for this task. On the next one, we are going to learn how to use Python's zip and starred expressions, two things which can be pivotal for making you master wrangling data structures around Python. See ya!
+    - Task 5
+        - Learning Object:: "Wrangle and transpose python structures through zip and starred expressions"
+        - Description:: On this task, you are going to learn how to transpose data on Python by the usage of the zip keyword, as well as by using starred expressions.
+        - Script::
+            - Welcome back! On this task, you are going to learn how to transpose data on Python by the usage of the zip keyword, as well as by using starred expressions.
+            - Zip is an somewhat misunderstood keyword on Python which allows you to transpose and rearrange data easily, without having to resort to iterators or complex operations. Essentially, it transforms several lists into a single one, but it could do the reverse operation too through the starred expressions.I'll show through a simple use-case.
+            - Open the task 5 notebook, and let's see the first and second cells. We have a problem where we have two lists: names and values, and we want to wrangle them into a single object, which is the records list.
+            - To do that, the traditional way is for doing a for loop and appending manually. But through the zip keyword, we can drop that loop.
+            - To do that, let's copy the names and values into the next block. And just type with me: records equals zip names values. Then, print list records. With just one line, we've done that previous loop!
+            - Of course, there's a catch that I didn't instantiated the record namedtuple, but that's easy if we use a list comprehension. Change records into zipped records, and pass records equals record name equals name value equals value for name value in zipped records. That's it! Feel free to pause the video now, and play with the names and values.
+            - Now I'll show you another super useful hack. Starred expressions. They allow you to unpack lists into several arguments, and it is probably one of Python's most useful features when doing serious software engineering. I'll show how it works on practice.
+            - Copy the last block, and paste in a new one. Delete the records line, and let's type it again: records equals record star record for record in zipped records. Run it. Neat isn't?
+            - This is important because it allows us to do the reverse operation of zip: insteading of packing multiple lists into one records lists, the star operator allows us to unpack one list into multiple lists. To see what I mean, let's unpack our records list in the next block.
+            - Copy and paste the block, and let's unpack the traditional way: new names equals list, new values equals list, for record in records new names append record name new values append record value print new names print new values. Let's run it for making sure that it did work. Done!
+            - Now I'll show you the ziped way. Copy the last cell in a new block, let's remove that fof loop, and just type with me: new names new values equals zip start records. Just run it. Neat isn't? Feel free to pause the video and play with the values.
+            - Now I'll give you a more detailed briefing about how this star operator works, but first let's write a function for printing all arguments that it receives: Come with me on the next block: def f star arguments, for argument in arguments print argument. 
+            - When you call that function with no arguments, nothing happens, and when you call with some arguments like let's say one two three, you have a print for every argument.
+            - So let's see what happens when we pass a list to it: You also have a print of the list. But something happens when you pass a star before the list: it as like you have passed each list argument individually!
+            - So that's it for this task! You now have a grasp of how to use zip and starred expressions on Python, and on next task you are going to learn how to make use of multiple CPUs for your code, as well as keeping tracking of the progress easily through progress bars! Until soon!
+    - Task 6
+        - Learning Object:: "Run heavy tasks with multiprocessing and progress bars"
+        - Description:: On this task, I'll show you how to keep track of your execution time through tqdm progress bars and how to delegate some of your most expensive tasks to the multiprocessing library.
+        - Script::
+            - Welcome back! On this task, I'll show you how to keep track of your execution time through tqdm progress bars and how to delegate some of your most expensive tasks to the multiprocessing library.
+            - Progress bars is a simple but very useful tool, both for debugging but also for peace of mind. To show you how they work, let's open the task six notebook. I've included there an function for simulation a logistic map - the simplest chaotic system that we know about.
+            - Studying chaotic systems usually requires iterating over them for millions and millions of steps, and that's exactly what we do in the first cell. The problem is that when running over billions of points, you may want to know when it's going to end so that you know how much coffee time you do have.
+            - The Solution is to use the tqdm library. and it as simple that you could imagine it. Copy the first cell, paste into a new one, and import the tqdm library. Now put tqdm on the iterator. It is really that simple!
+            - You can also put labels on the progress bars. Copy the last block, and paste it on the next one. Put an desc argument equals iterating on the logistic map. That's it!
+            - Another thing of tqdm is that it does support nested progress bars. For doing it, just come with me. First let's create a new variable, which is x i. They represent initial conditions for our chaotic system. Now let's do another for loop, for iterating on those initial conditions. Open here, for x zero in tqdm x i, desc equals iterating on the logistic map. Now we set x equals x zero, and to the original loop, but let's change the desc so that it says f initial values equals x zero. Run it!
+            - Neat isn't? Feel free to pause the video now and tinker with the initial values, or the number of iterations.
+            - Now what if you want to make full use of your processing power? It is well know that Python only uses one single core for doing tasks. Well, I'll show you how to do it easily, and with progress bars too!
+            - Let's copy and paste the last block, but we are going to need to do a refactor. Let's encapsulate the inner loop into a function, like here: def logistic simulation x zero, and put all the contents inside it. Put also a return keyword. Also, optionally, remove the tqdm references. Take your time for doing that
+            - Now that we have done that, let's import the multiprocessing library. Come with me: from multiprocessing pool import pool. This pool function is what does everything that we need for now. Remove the for loop, and type together: with pool as p output equals p map logistic simulation x i. Print output. Run it. That's it! Now we are making use of all our CPU cores! the simulation will run a lot faster now.
+            - This pool map function essentially receives a function as its first argument, and the second argument is a list which it is utilized for applying the arguments into the function, where each list argument is associated with an separate process.
+            - Now for the last part. I'll show you how to actually put progress bars on your multiprocessing task. Rename the map to imap, change the name of output to iterator, create a new variable called temp_output as tqdm iterator total equals len x i desc sweeping initial values, and attribute output as list temp output. Run it.
+            - Yeah, it works. Now you have the best of both worlds, and you can put progress bars and multiprocessing tasks into everything that you'll need to.
+            - So that's it for this task. On next one, I'll show how you can format strings and texts seamlessly through the f-strings and the format function. Bye!
+    - Task 7
+        - Learning Object:: "Make effortless custom texts with f-strings and .format()"
+        - Description::  On this task, you'll learn how to format strings and texts effortlessly through the dot format function and also f-strings.
+        - Script::
+            - Welcome to the final task of this course! On this task, you'll learn how to format strings and texts effortlessly through the dot format function and also f-strings.
+            - Both the format function and the f-strings can decorate your texts in order to make more natural writing strings on Python. In order to see why, let's first open the task 7 notebook.
+            - On the first see, I've put an example of text printing on Python, which is done in a sort of traditional way. We use sums for managing the text structure and printing it.
+            - The problem is that this isn't neat. You don't have a sense of the actual text structure, and also adding it up is a computationally expensive operation.
+            - An somewhat better way to do it, is through multiline strings. You copy the cell, and do some modifications: just do after me.
+            - It looks a bit better, but there is still that last addition that doesn't seem quite right. I'll introduce you now the format function to solve this.
+            - For using it, remove that addition part, and add curly braces where you want the task number to be in the text. 
+            - Now, inside the print function, add a dot format task no. That's it! Now you have an fine control over the text structure!
+            - There is also an added bonus that the format method allows you to specify some options about the formatting, like the decimal precision. In order to have two significant digits for instance, we would put dot two f. Run it!
+            - Also, format allows you to place additional arguments with ease. Let's create a new variable called learning object which equals texts, and add a new curly braces inside the text, in place of texts. Now add the learning object on format. Run it. 
+            - Another possibility that the format command generates, is to permit you for using dictionaries as arguments, to see what I mean, let's encapsulate our variables in a dict: format objects equals dict of learning object texts, task no seven. Now we would use a starred expression into the format method. Run it! Feel free now to pause the video and to change the text structure or the variables as you would like.
+            - If using the format seems like work, there is another option that is more practical and that we have used through this course: the f-strings.
+            - On f-strings, we have a text with curly braces indicating what we want to format, but we pass code to be directly evaluated!
+            - To see what I mean, copy the last block, put an f before the text, and just print the text, without the format. Run it. Do you note any difference?
+            - f-strings also allows you to put decimal precision specifiers and so on. For the task no for instance, we would put here dot two f. Run it again. Practical isn't? Feel free to pause the video and play a bit with it.
+            - So that's it for this course! Through our journey, you have learned several separate but equally useful tricks and knowledge that can help you a lot being a master Python user. All of those techniques can be used by anyone, but can make a great difference in making you be more clear and happy while coding. I hope you've enjoyed the course, and there are a lot more guided projects at Coursera that you can enroll for learning even more about software engineering, data science and among others. Hopefully we'll see on the next course, bye bye!
